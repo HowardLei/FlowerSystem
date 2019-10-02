@@ -21,10 +21,10 @@
         </tr>
         <c:forEach items="${list}" var="flower">
             <tr>
-                <td>${flower.}</td>
-                <td>${flower.}</td>
-                <td>${flower.}</td>
-                <td>${flower.}</td>
+                <td>${flower.id}</td>
+                <td>${flower.name}</td>
+                <td>${flower.price}</td>
+                <td>${flower.production}</td>
             </tr>
         </c:forEach>
     </table>
