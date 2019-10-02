@@ -10,6 +10,7 @@ public class Flower {
     private int id;
     private String name;
     private double price;
+    private String production;
 
     public Flower(int id, String name, double price, String production) {
         this.id = id;
@@ -17,8 +18,6 @@ public class Flower {
         this.price = price;
         this.production = production;
     }
-
-    private String production;
 
     public int getId() {
         return id;

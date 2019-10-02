@@ -5,12 +5,12 @@ import com.itcenter.pojo.Flower;
 import java.util.List;
 
 /**
- * FlowerDao class
+ * FlowerDao interface
  *
  * @author apple
  * @date 2019/9/30
  */
 public interface FlowerDao {
     List<Flower> selAll();
-    int addFlower(Flower flower);
+    int insFlower(Flower flower);
 }

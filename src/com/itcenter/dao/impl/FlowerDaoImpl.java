@@ -8,6 +8,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FlowerDaoImpl class
+ *
+ * @author apple
+ * @date 2019/9/30
+ */
 public class FlowerDaoImpl implements FlowerDao {
     private static final String URL = "jdbc:mysql://localhost:3306/FlowerSystem";
     private static final String USER = "root";
@@ -34,7 +40,17 @@ public class FlowerDaoImpl implements FlowerDao {
     }
 
     @Override
-    public int addFlower(Flower flower) {
+    public int insFlower(Flower flower) {
+        try {
+            var connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            var preparedStatement = connection.prepareStatement("insert into FlowerSystem.Flower(name, price, production) values (?, ?, ?);");
+            preparedStatement.setObject(1, flower.getName());
+            preparedStatement.setObject(2, flower.getPrice());
+            preparedStatement.setObject(3, flower.getProduction());
+            return preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 }
