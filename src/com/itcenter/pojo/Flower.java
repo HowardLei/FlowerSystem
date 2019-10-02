@@ -19,6 +19,10 @@ public class Flower {
         this.production = production;
     }
 
+    public Flower(String name, double price, String production) {
+        this(-1, name, price, production);
+    }
+
     public int getId() {
         return id;
     }

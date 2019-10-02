@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>花卉信息</title>
 </head>
 <body>
     <table border="1">
@@ -28,6 +28,6 @@
             </tr>
         </c:forEach>
     </table>
-    <a href="#">添加花卉信息</a>
+    <a href="jsp/add.jsp">添加花卉信息</a>
 </body>
 </html>
