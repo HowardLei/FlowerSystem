@@ -5,7 +5,7 @@ import com.itcenter.pojo.Flower;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -20,8 +20,9 @@ public class FlowerDaoImpl implements FlowerDao {
     private static final String PASSWORD = "SweetieCan@0830";
     @Override
     public List<Flower> selAll() {
-        var list = new ArrayList<Flower>();
+        var list = new LinkedList<Flower>();
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             var connection = DriverManager.getConnection(URL, USER, PASSWORD);
             var statement = connection.createStatement();
             var resultSet = statement.executeQuery("select * from FlowerSystem.Flower;");
@@ -33,7 +34,7 @@ public class FlowerDaoImpl implements FlowerDao {
                 var flower = new Flower(id, name, price, production);
                 list.add(flower);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return list;

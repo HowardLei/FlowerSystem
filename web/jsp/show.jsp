@@ -15,9 +15,9 @@
     <table border="1">
         <tr>
             <th>花卉编号</th>
-            <th>花卉</th>
-            <th>花卉</th>
-            <th>花卉</th>
+            <th>花卉姓名</th>
+            <th>花卉价格（元）</th>
+            <th>花卉原产地</th>
         </tr>
         <c:forEach items="${list}" var="flower">
             <tr>
@@ -28,5 +28,6 @@
             </tr>
         </c:forEach>
     </table>
+    <a href="#">添加花卉信息</a>
 </body>
 </html>
